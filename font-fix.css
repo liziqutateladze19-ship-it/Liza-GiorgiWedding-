@@ -1,0 +1,28 @@
+/* Global invitation font lock.
+   Everything uses Geo Rustaveli except the RSVP / confirmation section,
+   which intentionally keeps the existing Geo Tabidze styling. */
+
+body,
+body *,
+body *::before,
+body *::after {
+  font-family: var(--font-display) !important;
+}
+
+/* Keep the RSVP / "დაგვიდასტურეთ მოწვევა" page on its existing font. */
+.rsvp-section,
+.rsvp-section *,
+.rsvp-section *::before,
+.rsvp-section *::after {
+  font-family: var(--font-body) !important;
+}
+
+/* The final success message is part of the RSVP confirmation UI. */
+.rsvp-section .success-message {
+  font-family: var(--font-body) !important;
+}
+
+/* Keep the music control icon crisp and independent from the invitation font. */
+.music-toggle__thumb {
+  font-family: system-ui, sans-serif !important;
+}
