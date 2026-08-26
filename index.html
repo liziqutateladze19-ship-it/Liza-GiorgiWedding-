@@ -7,97 +7,22 @@
 <meta content="#194569" name="theme-color"/>
 <meta content="საქორწილო მოსაწვევი" name="description"/>
 <title>საქორწილო მოსაწვევი</title>
-<link as="style" href="./styles.css?v=10" rel="preload"/>
-<link as="font" crossorigin="" href="./geo-rustaveli.ttf?v=10" rel="preload" type="font/ttf"/>
-<link as="font" crossorigin="" href="./geo-tabidze.ttf?v=10" rel="preload" type="font/ttf"/>
-<link href="./styles.css?v=10" rel="stylesheet"/>
-<link href="./font-fix.css?v=1" rel="stylesheet"/>
+<link as="style" href="./styles.css?v=11" rel="preload"/>
+<link as="font" crossorigin="" href="./geo_naniko-73301560633.ttf?v=1" rel="preload" type="font/ttf"/>
+<link href="./styles.css?v=11" rel="stylesheet"/>
+<link href="./font-fix.css?v=2" rel="stylesheet"/>
 </head>
 <body>
 <main class="phone-shell" id="invite">
-<!-- მუსიკის ჩამრთველი/გამომრთველი — ყოველთვის ეკრანის ზედა მარჯვენა მხარეს -->
-<button aria-label="მუსიკის გამორთვა" aria-pressed="true" class="music-toggle is-on" id="musicToggle" title="მუსიკის ჩართვა / გამორთვა" type="button">
-<span aria-hidden="true" class="music-toggle__track">
-<span class="music-toggle__thumb">♫</span>
-</span>
-</button>
-<!-- YouTube background music player — ვიზუალურად დამალულია -->
+<button aria-label="მუსიკის გამორთვა" aria-pressed="true" class="music-toggle is-on" id="musicToggle" title="მუსიკის ჩართვა / გამორთვა" type="button"><span aria-hidden="true" class="music-toggle__track"><span class="music-toggle__thumb">♫</span></span></button>
 <div aria-hidden="true" class="youtube-music-player" id="youtubeMusicPlayer"></div>
-<!-- პირველი ეკრანი: ვიდეო 1 -->
-<section aria-label="მოსაწვევის საწყისი ვიდეო" class="hero">
-<video autoplay="" class="hero__video" disablepictureinpicture="" id="heroVideo" loop="" muted="" playsinline="" preload="auto">
-<source src="./ვიდეო 1.mp4" type="video/mp4"/>
-<source src="./ვიდეო 1.MOV" type="video/quicktime"/>
-</video>
-<div aria-hidden="true" class="hero__fade"></div>
-<div aria-hidden="true" class="scroll-cue"><span></span></div>
-</section>
-<section class="section couple-intro reveal">
-<h1 class="couple-intro__title">liza &amp; giorgi</h1>
-<p class="couple-intro__text">Cveni siyvarulis istoria axal etapze gadadis. sixaruliT giwvevT, iyoT am mogonebis nawili. Tqveni mobrZaneba CvenTvis udidesi bedniereba iqneba!</p>
-</section>
-<section class="section countdown-section reveal">
-<h1 class="section-title">darCenili dro qorwilamde</h1>
-<img alt="დეკორატიული ელემენტი" class="section-art section-art--wide" src="./ელემენტი 1 GIF.GIF"/>
-<div aria-live="polite" class="countdown" id="countdown">
-<div class="countdown__item"><strong id="days">00</strong><span>dRe</span></div>
-<div class="countdown__item"><strong id="hours">00</strong><span>saaTi</span></div>
-<div class="countdown__item"><strong id="minutes">00</strong><span>wuTi</span></div>
-<div class="countdown__item"><strong id="seconds">00</strong><span>wami</span></div>
-</div>
-</section>
-<section class="section schedule-intro reveal">
-<h2 class="section-title">saqorwilo dRis ganrigi</h2>
-<img alt="საქორწილო დღის განრიგის დეკორატიული ელემენტი" class="section-art section-art--wide smart-asset" data-asset="element2" id="element2Art" src="./ელემენტი 2.GIF"/>
-</section>
-<section class="section venue-card reveal">
-<p class="eyebrow">jvriswera</p>
-<p class="event-time">15:30</p>
-<img alt="მთაწმინდის წმ. ნინოს ტაძარი" class="venue-photo" src="./ფოტო 1 .png"/>
-<h3 class="venue-title">mTawmindis wm. ninos taZari</h3>
-<p class="venue-address">SoTa CitaZis quCa #9, Tbilisi</p>
-<a class="map-button" href="https://maps.app.goo.gl/2LpKrZV7U8JbyY4d8" rel="noopener noreferrer" target="_blank">rukaze naxva <span aria-hidden="true">↗</span></a>
-</section>
-<section class="section venue-card reveal">
-<p class="eyebrow">saqorwilo wveuleba</p>
-<h3 class="venue-title">ივენთ ჰოლი "ჰილსაიდი"</h3>
-<p class="venue-address">Tbilisi-kojori</p>
-<a class="map-button" href="https://maps.app.goo.gl/D95GpLyCcRzBArGfA" rel="noopener noreferrer" target="_blank">rukaze naxva <span aria-hidden="true">↗</span></a>
-<img alt="ივენთ ჰოლი „ჰილსაიდი“ — საქორწილო წვეულება" class="venue-photo venue-photo--party" src="./წვეულება.png"/>
-</section>
-<section aria-label="წვეულების განრიგი" class="section timeline-section reveal">
-<div class="timeline">
-<div aria-hidden="true" class="timeline__line"></div>
-<article class="timeline__item timeline__item--left"><div aria-hidden="true" class="timeline__dot"></div><div class="timeline__content"><img alt="" class="timeline__icon" src="./ელემენტი 3.png"/><h3>misasalmebeli koqteili</h3><p>17:00</p></div></article>
-<article class="timeline__item timeline__item--right"><div aria-hidden="true" class="timeline__dot"></div><div class="timeline__content"><img alt="" class="timeline__icon" src="./ელემენტი 4.png"/><h3>xelis moweris ceremoniali</h3><p>17:30</p></div></article>
-<article class="timeline__item timeline__item--left"><div aria-hidden="true" class="timeline__dot"></div><div class="timeline__content"><img alt="" class="timeline__icon" src="./ელემენტი 5.png"/><h3>sazeimo vaxSami</h3><p>18:00</p></div></article>
-<article class="timeline__item timeline__item--right timeline__item--last"><div aria-hidden="true" class="timeline__dot"></div><div class="timeline__content"><img alt="" class="timeline__icon" src="./ელემენტი 6.png"/><h3>wveuleba-guguni dilamde</h3></div></article>
-</div>
-</section>
-<section class="section rsvp-section reveal" id="rsvpSection">
-<img alt="" class="rsvp-decoration rsvp-decoration--right" src="./ელემენტი 8 .GIF"/>
-<div class="rsvp-content">
-<h2 class="section-title">dagvidastureT mowveva</h2>
-<form data-netlify="true" data-netlify-honeypot="bot-field" id="rsvpForm" method="POST" name="wedding-rsvp" novalidate="">
-<input name="form-name" type="hidden" value="wedding-rsvp"/>
-<input id="submittedAt" name="submittedAt" type="hidden" value=""/>
-<input id="rsvpSource" name="source" type="hidden" value=""/>
-<p aria-hidden="true" class="netlify-honeypot"><label>Don’t fill this out: <input autocomplete="off" name="bot-field" tabindex="-1"/></label></p>
-<label class="field-label" for="fullName">saxeli da gvari</label>
-<input autocomplete="name" class="text-input" id="fullName" name="fullName" required="" type="text"/>
-<fieldset class="attendance-options"><legend>airCieT pasuxi</legend>
-<label class="radio-card"><input name="attendance" required="" type="radio" value="სიამოვნებით დავესწრები"/><span aria-hidden="true" class="radio-card__mark"></span><span>siamovnebiT daveswrebi</span></label>
-<label class="radio-card"><input name="attendance" required="" type="radio" value="სამწუხაროდ ვერ დავესწრები"/><span aria-hidden="true" class="radio-card__mark"></span><span>samwuxarod ver daveswrebi</span></label>
-</fieldset>
-<p class="form-error" id="formError" role="alert"></p>
-<button class="submit-button" id="submitButton" type="submit">gagzavna</button>
-<p class="success-message" hidden="" id="successMessage" role="status">didi madloba! Tqveni pasuxi miRebulia 🤍</p>
-</form>
-</div>
-<img alt="" class="rsvp-decoration rsvp-decoration--left" src="./ელემენტი 7.GIF"/>
-</section>
-<footer class="final-message reveal"><p>yvelaze lamazi dRe maSin xdeba gansakuTrebuli, roca mas sayvarel adamianebTan erTad vatarebT. gelodebiT, rom Cveni bednierebis es dRe TqvenTan erTad gaviziaroT.</p></footer>
-</main>
-<script src="./script.js?v=10"></script>
-</body>
-</html>
+<section aria-label="მოსაწვევის საწყისი ვიდეო" class="hero"><video autoplay="" class="hero__video" disablepictureinpicture="" id="heroVideo" loop="" muted="" playsinline="" preload="auto"><source src="./ვიდეო 1.mp4" type="video/mp4"/><source src="./ვიდეო 1.MOV" type="video/quicktime"/></video><div aria-hidden="true" class="hero__fade"></div><div aria-hidden="true" class="scroll-cue"><span></span></div></section>
+<section class="section couple-intro reveal"><h1 class="couple-intro__title">ლიზა &amp; გიორგი</h1><p class="couple-intro__text">ჩვენი სიყვარულის ისტორია ახალ ეტაპზე გადადის. სიხარულით გიწვევთ, იყოთ ამ მოგონების ნაწილი. თქვენი მობრძანება ჩვენთვის უდიდესი ბედნიერება იქნება!</p></section>
+<section class="section countdown-section reveal"><h1 class="section-title">დარჩენილი დრო ქორწილამდე</h1><img alt="დეკორატიული ელემენტი" class="section-art section-art--wide" src="./ელემენტი 1 GIF.GIF"/><div aria-live="polite" class="countdown" id="countdown"><div class="countdown__item"><strong id="days">00</strong><span>დღე</span></div><div class="countdown__item"><strong id="hours">00</strong><span>საათი</span></div><div class="countdown__item"><strong id="minutes">00</strong><span>წუთი</span></div><div class="countdown__item"><strong id="seconds">00</strong><span>წამი</span></div></div></section>
+<section class="section schedule-intro reveal"><h2 class="section-title">საქორწილო დღის განრიგი</h2><img alt="საქორწილო დღის განრიგის დეკორატიული ელემენტი" class="section-art section-art--wide smart-asset" data-asset="element2" id="element2Art" src="./ელემენტი 2.GIF"/></section>
+<section class="section venue-card reveal"><p class="eyebrow">ჯვრისწერა</p><p class="event-time">15:30</p><img alt="მთაწმინდის წმ. ნინოს ტაძარი" class="venue-photo" src="./ფოტო 1 .png"/><h3 class="venue-title">მთაწმინდის წმ. ნინოს ტაძარი</h3><p class="venue-address">შოთა ჩიტაძის ქუჩა #9, თბილისი</p><a class="map-button" href="https://maps.app.goo.gl/2LpKrZV7U8JbyY4d8" rel="noopener noreferrer" target="_blank">რუკაზე ნახვა <span aria-hidden="true">↗</span></a></section>
+<section class="section venue-card reveal"><p class="eyebrow">საქორწილო წვეულება</p><h3 class="venue-title">ივენთ ჰოლი "ჰილსაიდი"</h3><p class="venue-address">თბილისი-კოჯორი</p><a class="map-button" href="https://maps.app.goo.gl/D95GpLyCcRzBArGfA" rel="noopener noreferrer" target="_blank">რუკაზე ნახვა <span aria-hidden="true">↗</span></a><img alt="ივენთ ჰოლი „ჰილსაიდი“ — საქორწილო წვეულება" class="venue-photo venue-photo--party" src="./წვეულება.png"/></section>
+<section aria-label="წვეულების განრიგი" class="section timeline-section reveal"><div class="timeline"><div aria-hidden="true" class="timeline__line"></div><article class="timeline__item timeline__item--left"><div aria-hidden="true" class="timeline__dot"></div><div class="timeline__content"><img alt="" class="timeline__icon" src="./ელემენტი 3.png"/><h3>მისასალმებელი კოქტეილი</h3><p>17:00</p></div></article><article class="timeline__item timeline__item--right"><div aria-hidden="true" class="timeline__dot"></div><div class="timeline__content"><img alt="" class="timeline__icon" src="./ელემენტი 4.png"/><h3>ხელის მოწერის ცერემონიალი</h3><p>17:30</p></div></article><article class="timeline__item timeline__item--left"><div aria-hidden="true" class="timeline__dot"></div><div class="timeline__content"><img alt="" class="timeline__icon" src="./ელემენტი 5.png"/><h3>საზეიმო ვახშამი</h3><p>18:00</p></div></article><article class="timeline__item timeline__item--right timeline__item--last"><div aria-hidden="true" class="timeline__dot"></div><div class="timeline__content"><img alt="" class="timeline__icon" src="./ელემენტი 6.png"/><h3>წვეულება - გუგუნი გათენებამდე</h3></div></article></div></section>
+<section class="section rsvp-section reveal" id="rsvpSection"><img alt="" class="rsvp-decoration rsvp-decoration--right" src="./ელემენტი 8 .GIF"/><div class="rsvp-content"><h2 class="section-title">დაგვიდასტურეთ მოწვევა</h2><form data-netlify="true" data-netlify-honeypot="bot-field" id="rsvpForm" method="POST" name="wedding-rsvp" novalidate=""><input name="form-name" type="hidden" value="wedding-rsvp"/><input id="submittedAt" name="submittedAt" type="hidden" value=""/><input id="rsvpSource" name="source" type="hidden" value=""/><p aria-hidden="true" class="netlify-honeypot"><label>Don’t fill this out: <input autocomplete="off" name="bot-field" tabindex="-1"/></label></p><label class="field-label" for="fullName">სახელი და გვარი</label><input autocomplete="name" class="text-input" id="fullName" name="fullName" required="" type="text"/><fieldset class="attendance-options"><legend>აირჩიეთ პასუხი</legend><label class="radio-card"><input name="attendance" required="" type="radio" value="სიამოვნებით დავესწრები"/><span aria-hidden="true" class="radio-card__mark"></span><span>სიამოვნებით დავესწრები</span></label><label class="radio-card"><input name="attendance" required="" type="radio" value="სამწუხაროდ ვერ დავესწრები"/><span aria-hidden="true" class="radio-card__mark"></span><span>სამწუხაროდ ვერ დავესწრები</span></label></fieldset><p class="form-error" id="formError" role="alert"></p><button class="submit-button" id="submitButton" type="submit">გაგზავნა</button><p class="success-message" hidden="" id="successMessage" role="status">დიდი მადლობა! თქვენი პასუხი მიღებულია 🤍</p></form></div><img alt="" class="rsvp-decoration rsvp-decoration--left" src="./ელემენტი 7.GIF"/></section>
+<footer class="final-message reveal"><p>ყველაზე ლამაზი დღე მაშინ ხდება განსაკუთრებული, როცა მას საყვარელ ადამიანებთან ერთად ვატარებთ. გელოდებით, რომ ჩვენი ბედნიერების ეს დღე თქვენთან ერთად გავიზიაროთ.</p></footer>
+</main><script src="./script.js?v=11"></script></body></html>
