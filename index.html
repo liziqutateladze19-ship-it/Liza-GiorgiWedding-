@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#194569" />
+  <meta name="description" content="საქორწილო მოსაწვევი" />
+  <title>საქორწილო მოსაწვევი</title>
+  <link rel="preload" href="./styles.css?v=3" as="style" />
+  <link rel="stylesheet" href="./styles.css?v=3" />
+</head>
+<body>
+  <main class="phone-shell" id="invite">
+    <!-- მუსიკის ჩამრთველი/გამომრთველი — ყოველთვის ეკრანის ზედა მარჯვენა მხარეს -->
+    <button
+      class="music-toggle is-on"
+      id="musicToggle"
+      type="button"
+      aria-label="მუსიკის გამორთვა"
+      aria-pressed="true"
+      title="მუსიკის ჩართვა / გამორთვა"
+    >
+      <span class="music-toggle__track" aria-hidden="true">
+        <span class="music-toggle__thumb">♫</span>
+      </span>
+    </button>
+
+    <!-- რეკლამის გარეშე ადგილობრივი მუსიკა. ატვირთე repository-ის root-ში "მუსიკა.mp3" ან "მუსიკა.m4a" -->
+    <audio id="backgroundMusic" autoplay loop preload="auto" playsinline>
+      <source src="./მუსიკა.mp3" type="audio/mpeg" />
+      <source src="./music.mp3" type="audio/mpeg" />
+      <source src="./მუსიკა.m4a" type="audio/mp4" />
+      <source src="./music.m4a" type="audio/mp4" />
+    </audio>
+
+    <!-- პირველი ეკრანი: ვიდეო 1 -->
+    <section class="hero" aria-label="მოსაწვევის საწყისი ვიდეო">
+      <video
+        id="heroVideo"
+        class="hero__video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        disablepictureinpicture
+      >
+        <source src="./ვიდეო 1.mp4" type="video/mp4" />
+        <source src="./ვიდეო 1.MOV" type="video/quicktime" />
+      </video>
+      <div class="hero__fade" aria-hidden="true"></div>
+      <div class="scroll-cue" aria-hidden="true">
+        <span></span>
+      </div>
+    </section>
+
+    <!-- Countdown -->
+    <section class="section countdown-section reveal">
+      <h1 class="section-title">დარჩენილი დრო ქორწილამდე</h1>
+
+      <img
+        class="section-art section-art--wide"
+        src="./ელემენტი 1 GIF.GIF"
+        alt="დეკორატიული ელემენტი"
+      />
+
+      <div class="countdown" id="countdown" aria-live="polite">
+        <div class="countdown__item"><strong id="days">00</strong><span>დღე</span></div>
+        <div class="countdown__item"><strong id="hours">00</strong><span>საათი</span></div>
+        <div class="countdown__item"><strong id="minutes">00</strong><span>წუთი</span></div>
+        <div class="countdown__item"><strong id="seconds">00</strong><span>წამი</span></div>
+      </div>
+    </section>
+
+    <!-- დღის განრიგი -->
+    <section class="section schedule-intro reveal">
+      <h2 class="section-title">საქორწილო დღის განრიგი</h2>
+
+      <img
+        id="element2Art"
+        class="section-art section-art--wide smart-asset"
+        src="./ელემენტი 2.GIF"
+        data-asset="element2"
+        alt="საქორწილო დღის განრიგის დეკორატიული ელემენტი"
+      />
+    </section>
+
+    <!-- ჯვრისწერა -->
+    <section class="section venue-card reveal">
+      <p class="eyebrow">ჯვრისწერა</p>
+      <p class="event-time">15:30</p>
+
+      <img
+        class="venue-photo"
+        src="./ფოტო 1 .png"
+        alt="მთაწმინდის წმ. ნინოს ტაძარი"
+      />
+
+      <h3 class="venue-title">მთაწმინდის წმ. ნინოს ტაძარი</h3>
+      <p class="venue-address">9 Shota Chitadze St, Tbilisi</p>
+
+      <a
+        class="map-button"
+        href="https://maps.app.goo.gl/2LpKrZV7U8JbyY4d8"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        რუკაზე ნახვა
+        <span aria-hidden="true">↗</span>
+      </a>
+    </section>
+
+    <!-- საქორწილო წვეულება -->
+    <section class="section venue-card reveal">
+      <p class="eyebrow">საქორწილო წვეულება</p>
+      <h3 class="venue-title">Hillside | ივენთ ჰოლი „ჰილსაიდი“</h3>
+      <p class="venue-address">Tbilisi-Kojori I Dead End, Tbilisi</p>
+
+      <a
+        class="map-button"
+        href="https://maps.app.goo.gl/D95GpLyCcRzBArGfA"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        რუკაზე ნახვა
+        <span aria-hidden="true">↗</span>
+      </a>
+
+      <img
+        class="venue-photo venue-photo--party"
+        src="./წვეულება.png"
+        alt="Hillside — საქორწილო წვეულება"
+      />
+    </section>
+
+    <!-- მარცხენა / მარჯვენა Timeline -->
+    <section class="section timeline-section reveal" aria-label="წვეულების განრიგი">
+      <div class="timeline">
+        <div class="timeline__line" aria-hidden="true"></div>
+
+        <article class="timeline__item timeline__item--left">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="timeline__content">
+            <img class="timeline__icon" src="./ელემენტი 3.png" alt="" />
+            <h3>მისასალმებელი კოქტეილი</h3>
+            <p>17:00</p>
+          </div>
+        </article>
+
+        <article class="timeline__item timeline__item--right">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="timeline__content">
+            <img class="timeline__icon" src="./ელემენტი 4.png" alt="" />
+            <h3>ხელის მოწერის ცერემონიალი</h3>
+            <p>17:30</p>
+          </div>
+        </article>
+
+        <article class="timeline__item timeline__item--left">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="timeline__content">
+            <img class="timeline__icon" src="./ელემენტი 5.png" alt="" />
+            <h3>საზეიმო ვახშამი</h3>
+            <p>18:00</p>
+          </div>
+        </article>
+
+        <article class="timeline__item timeline__item--right timeline__item--last">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="timeline__content">
+            <img class="timeline__icon" src="./ელემენტი 6.png" alt="" />
+            <h3>წვეულება-გუგუნი დილამდე</h3>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="section rsvp-section reveal" id="rsvpSection">
+      <div class="rsvp-box">
+        <img
+          class="rsvp-decoration rsvp-decoration--left"
+          src="./ელემენტი 7.GIF"
+          alt=""
+        />
+        <img
+          class="rsvp-decoration rsvp-decoration--right"
+          src="./ელემენტი 8 .GIF"
+          alt=""
+        />
+
+        <div class="rsvp-content">
+          <h2 class="section-title">დაგვიდასტურეთ მოწვევა</h2>
+
+          <form id="rsvpForm" novalidate>
+            <label class="field-label" for="fullName">სახელი და გვარი</label>
+            <input
+              class="text-input"
+              id="fullName"
+              name="fullName"
+              type="text"
+              autocomplete="name"
+              required
+            />
+
+            <fieldset class="attendance-options">
+              <legend>აირჩიეთ პასუხი</legend>
+
+              <label class="radio-card">
+                <input type="radio" name="attendance" value="სიამოვნებით დავესწრები" required />
+                <span class="radio-card__mark" aria-hidden="true"></span>
+                <span>სიამოვნებით დავესწრები</span>
+              </label>
+
+              <label class="radio-card">
+                <input type="radio" name="attendance" value="სამწუხაროდ ვერ დავესწრები" required />
+                <span class="radio-card__mark" aria-hidden="true"></span>
+                <span>სამწუხაროდ ვერ დავესწრები</span>
+              </label>
+            </fieldset>
+
+            <p class="form-error" id="formError" role="alert"></p>
+
+            <button class="submit-button" type="submit" id="submitButton">გაგზავნა</button>
+
+            <p class="success-message" id="successMessage" role="status" hidden>
+              დიდი მადლობა! თქვენი პასუხი მიღებულია 🤍
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- დასასრული -->
+    <footer class="final-message reveal">
+      <p>
+        ყველაზე ლამაზი დღე მაშინ ხდება განსაკუთრებული, როცა მას საყვარელ ადამიანებთან ერთად ვატარებთ.
+        გელოდებით, რომ ჩვენი ბედნიერების ეს დღე თქვენთან ერთად გავიზიაროთ.
+      </p>
+    </footer>
+  </main>
+
+  <script src="./script.js?v=3"></script>
+</body>
+</html>
