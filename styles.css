@@ -1,0 +1,732 @@
+@font-face {
+  font-family: "Geo Naniko";
+  src: url("./geo_naniko-73301560633.ttf?v=10") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --blue: #194569;
+  --blue-rgb: 25, 69, 105;
+  --ivory: #fffdf9;
+  --paper: #fffaf5;
+  --page: #f1f4f7;
+  --soft-border: rgba(var(--blue-rgb), 0.30);
+  --very-soft-blue: rgba(var(--blue-rgb), 0.055);
+  --shadow: 0 22px 70px rgba(var(--blue-rgb), 0.10);
+  --font-display: "Geo Naniko", "Noto Sans Georgian", system-ui, sans-serif;
+  --font-body: "Geo Naniko", "Noto Sans Georgian", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  background: var(--page);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--page);
+  font-family: var(--font-body);
+  color: var(--blue);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+label,
+fieldset,
+legend,
+a,
+p,
+span {
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+strong {
+  font-family: var(--font-display);
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+.phone-shell {
+  position: relative;
+  width: min(100%, 430px);
+  min-height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 12%, rgba(var(--blue-rgb), 0.045), transparent 28%),
+    radial-gradient(circle at 85% 46%, rgba(var(--blue-rgb), 0.035), transparent 26%),
+    var(--ivory);
+  box-shadow: var(--shadow);
+}
+
+.youtube-music-player {
+  position: fixed;
+  left: -9999px;
+  top: -9999px;
+  width: 200px;
+  height: 200px;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.music-toggle {
+  position: fixed;
+  z-index: 50;
+  top: max(14px, env(safe-area-inset-top));
+  right: max(14px, calc((100vw - min(100vw, 430px)) / 2 + 14px));
+  width: 58px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid rgba(var(--blue-rgb), .18);
+  border-radius: 999px;
+  background: rgba(255, 253, 249, 0.92);
+  box-shadow: 0 7px 22px rgba(var(--blue-rgb), .14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.music-toggle__track {
+  position: absolute;
+  inset: 4px;
+  border-radius: inherit;
+  background: rgba(var(--blue-rgb), .10);
+}
+
+.music-toggle__thumb {
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  transform: translate(0, -50%);
+  display: grid;
+  place-items: center;
+  background: var(--blue);
+  color: #fff;
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  box-shadow: 0 3px 9px rgba(var(--blue-rgb), .24);
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+.music-toggle.is-on .music-toggle__thumb { transform: translate(24px, -50%); }
+.music-toggle:not(.is-on) .music-toggle__thumb { opacity: .45; }
+
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 640px;
+  background: var(--paper);
+}
+
+.hero__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  background: var(--paper);
+}
+
+.hero__fade {
+  position: absolute;
+  inset: auto 0 0;
+  height: 22%;
+  background: linear-gradient(to bottom, transparent, rgba(255,253,249,.58), var(--ivory));
+  pointer-events: none;
+}
+
+.scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: max(22px, env(safe-area-inset-bottom));
+  width: 24px;
+  height: 38px;
+  transform: translateX(-50%);
+  border: 1px solid rgba(var(--blue-rgb), .72);
+  border-radius: 999px;
+  background: rgba(255,253,249,.20);
+  backdrop-filter: blur(8px);
+}
+
+.scroll-cue span {
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  width: 4px;
+  height: 8px;
+  border-radius: 99px;
+  background: var(--blue);
+  transform: translateX(-50%);
+  animation: scrollHint 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollHint {
+  0% { opacity: 0; transform: translate(-50%, 0); }
+  35% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, 13px); }
+}
+
+.section {
+  position: relative;
+  padding: 72px 24px;
+}
+
+.section-title,
+.eyebrow,
+.event-time,
+.venue-title,
+.venue-address,
+.timeline__content h3,
+.timeline__content p,
+.field-label,
+.attendance-options,
+.final-message,
+.map-button,
+.submit-button,
+.text-input,
+.form-error,
+.success-message {
+  color: var(--blue);
+}
+
+/* მთავარი/მნიშვნელოვანი ტექსტები — Geo Rustaveli */
+.section-title,
+.eyebrow,
+.event-time,
+.venue-title,
+.timeline__content h3,
+.timeline__content p,
+.countdown__item strong,
+.final-message,
+.success-message {
+  font-family: var(--font-display);
+}
+
+/* დამხმარე ტექსტები — Geo Tabidze */
+.venue-address,
+.map-button,
+.field-label,
+.attendance-options,
+.text-input,
+.submit-button,
+.form-error,
+.countdown__item span {
+  font-family: var(--font-body);
+}
+
+.section-title {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(30px, 9vw, 42px);
+  line-height: 1.18;
+  font-weight: 400;
+  letter-spacing: .01em;
+  text-wrap: balance;
+}
+
+.section-art {
+  margin-inline: auto;
+  object-fit: contain;
+}
+
+.section-art--wide {
+  width: min(100%, 350px);
+  max-height: 260px;
+  margin-top: 30px;
+}
+
+.smart-asset.is-loading {
+  visibility: hidden;
+}
+
+.smart-asset.is-ready {
+  visibility: visible;
+}
+
+.smart-asset[data-missing="true"] {
+  display: none;
+}
+
+.countdown-section {
+  padding-top: 84px;
+  padding-bottom: 96px;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 40px;
+}
+
+.countdown__item {
+  min-width: 0;
+  padding: 15px 4px 13px;
+  border: 1px solid var(--soft-border);
+  border-radius: 22px;
+  text-align: center;
+  background: rgba(255,255,255,.42);
+  box-shadow: 0 9px 24px rgba(var(--blue-rgb), .05);
+}
+
+.countdown__item strong {
+  display: block;
+  color: var(--blue);
+  font-size: clamp(25px, 8vw, 35px);
+  font-weight: 400;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown__item span {
+  display: block;
+  margin-top: 9px;
+  color: var(--blue);
+  font-size: 14px;
+  line-height: 1;
+}
+
+.schedule-intro {
+  padding-top: 42px;
+  padding-bottom: 36px;
+}
+
+.venue-card {
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 82px;
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  font-size: 33px;
+  line-height: 1.15;
+}
+
+.event-time {
+  margin: 8px 0 25px;
+  font-size: 24px;
+  font-variant-numeric: tabular-nums;
+}
+
+.venue-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  margin: 0 auto 28px;
+  border-radius: 30px;
+  object-fit: cover;
+  box-shadow: 0 15px 45px rgba(var(--blue-rgb), .09);
+}
+
+.venue-photo--party {
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+
+.venue-title {
+  margin: 0 auto;
+  font-size: 27px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-wrap: balance;
+}
+
+.venue-address {
+  margin: 12px auto 24px;
+  max-width: 320px;
+  font-size: 19px;
+  line-height: 1.45;
+}
+
+.map-button,
+.submit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  border: 1px solid var(--blue);
+  border-radius: 999px;
+  padding: 12px 27px;
+  background: var(--blue);
+  color: #fff;
+  text-decoration: none;
+  font-size: 19px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(var(--blue-rgb), .13);
+  transition: transform .2s ease, opacity .2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.map-button:active,
+.submit-button:active {
+  transform: scale(.98);
+}
+
+.timeline-section {
+  padding: 42px 13px 84px;
+}
+
+.timeline {
+  position: relative;
+  padding: 22px 0 8px;
+}
+
+.timeline__line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: var(--blue);
+  transform: translateX(-50%);
+}
+
+.timeline__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 34px 1fr;
+  min-height: 185px;
+}
+
+.timeline__dot {
+  grid-column: 2;
+  align-self: start;
+  justify-self: center;
+  width: 11px;
+  height: 11px;
+  margin-top: 45px;
+  border: 2px solid var(--ivory);
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 0 1px var(--blue);
+  z-index: 2;
+}
+
+.timeline__content {
+  align-self: start;
+  text-align: center;
+  padding: 0 5px;
+}
+
+.timeline__item--left .timeline__content {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.timeline__item--right .timeline__content {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.timeline__icon {
+  width: min(100%, 120px);
+  height: 96px;
+  margin: 0 auto 12px;
+  object-fit: contain;
+}
+
+.timeline__content h3 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-wrap: balance;
+}
+
+.timeline__content p {
+  margin: 8px 0 0;
+  font-size: 19px;
+  font-variant-numeric: tabular-nums;
+}
+
+.timeline__item--last {
+  min-height: 140px;
+}
+
+/* RSVP — ბოქსის გარეშე. დეკორაციები normal flow-შია და ტექსტს აღარ ეფარება */
+.rsvp-section {
+  padding: 62px 26px 108px;
+  overflow: visible;
+}
+
+.rsvp-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 360px;
+  margin: 6px auto 0;
+}
+
+.rsvp-decoration {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 138px;
+  max-height: 190px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.rsvp-decoration--right {
+  margin: 0 0 22px auto;
+  transform: translateX(8px);
+}
+
+.rsvp-decoration--left {
+  margin: 30px auto 0 0;
+  transform: translateX(-6px);
+}
+
+#rsvpForm {
+  margin-top: 46px;
+}
+
+/* ფორმის ყველა მეორეხარისხოვანი წარწერა ზუსტად Geo Tabidze-ით */
+#rsvpForm,
+#rsvpForm .field-label,
+#rsvpForm .attendance-options,
+#rsvpForm .attendance-options legend,
+#rsvpForm .radio-card,
+#rsvpForm .radio-card span,
+#rsvpForm .text-input,
+#rsvpForm .submit-button,
+#rsvpForm .form-error {
+  font-family: var(--font-body) !important;
+}
+
+.field-label,
+.attendance-options legend {
+  display: block;
+  margin: 0 0 11px;
+  color: var(--blue);
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 400;
+}
+
+.text-input {
+  width: 100%;
+  height: 62px;
+  border: 1.5px solid var(--blue);
+  border-radius: 19px;
+  outline: 0;
+  padding: 10px 17px;
+  background: rgba(255,253,249,.88);
+  color: var(--blue);
+  font-size: 20px;
+  caret-color: var(--blue);
+}
+
+.text-input:focus {
+  box-shadow: 0 0 0 3px rgba(var(--blue-rgb), .13);
+}
+
+.attendance-options {
+  margin: 32px 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.radio-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 68px;
+  margin-top: 12px;
+  border: 1.5px solid var(--soft-border);
+  border-radius: 20px;
+  padding: 13px 17px;
+  background: rgba(255,253,249,.68);
+  color: var(--blue);
+  font-size: 19px;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.radio-card input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.radio-card__mark {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  border: 1.5px solid var(--blue);
+  border-radius: 50%;
+  padding: 4px;
+  background-clip: content-box;
+}
+
+.radio-card input:checked + .radio-card__mark {
+  background-color: var(--blue);
+}
+
+.form-error {
+  min-height: 20px;
+  margin: 12px 0 0;
+  font-size: 16px;
+}
+
+.submit-button {
+  width: 100%;
+  min-height: 62px;
+  margin-top: 17px;
+  background: var(--blue);
+  color: #fff;
+  border-color: var(--blue);
+  font-size: 21px;
+}
+
+.submit-button:disabled {
+  opacity: .55;
+  cursor: wait;
+}
+
+/* წარმატების ტექსტი მნიშვნელოვანია — Geo Rustaveli */
+.success-message {
+  margin: 22px 0 0;
+  text-align: center;
+  font-family: var(--font-display) !important;
+  font-size: 22px;
+  line-height: 1.45;
+}
+
+.final-message {
+  padding: 28px 30px max(90px, calc(58px + env(safe-area-inset-bottom)));
+  font-family: var(--font-display) !important;
+  text-align: center;
+  font-size: 25px;
+  line-height: 1.55;
+}
+
+.final-message p {
+  margin: 0 auto;
+  font-family: var(--font-display) !important;
+  max-width: 350px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .9s ease, transform .9s cubic-bezier(.2,.75,.2,1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (min-width: 431px) {
+  body { padding: 22px 0; }
+
+  .phone-shell {
+    min-height: calc(100vh - 44px);
+    border-radius: 34px;
+  }
+
+  .hero {
+    height: calc(100svh - 44px);
+    min-height: 680px;
+  }
+}
+
+@media (max-width: 360px) {
+  .rsvp-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .rsvp-decoration {
+    width: 122px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .scroll-cue span { animation: none; }
+}
+
+
+/* Netlify Forms honeypot — spam protection, სტუმრისთვის უხილავია */
+.netlify-honeypot {
+  position: absolute !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  width: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+
+/* ვიდეოს შემდეგი ახალი ტექსტი — დიზაინის დანარჩენი ნაწილი უცვლელია */
+.couple-intro {
+  padding-top: 54px;
+  padding-bottom: 38px;
+  text-align: center;
+}
+
+.couple-intro__title,
+.couple-intro__text {
+  color: var(--blue);
+  font-family: var(--font-display) !important;
+  font-weight: 400;
+}
+
+.couple-intro__title {
+  margin: 0;
+  font-size: clamp(34px, 10vw, 46px);
+  line-height: 1.15;
+  letter-spacing: .01em;
+}
+
+.couple-intro__text {
+  max-width: 350px;
+  margin: 20px auto 0;
+  font-size: 22px;
+  line-height: 1.55;
+  text-wrap: balance;
+}
+
+
+/* V10 — მთელი მოსაწვევი მხოლოდ Geo Naniko ფონტით */
+#invite,
+#invite *,
+#invite input,
+#invite button,
+#invite label,
+#invite legend,
+#invite a {
+  font-family: "Geo Naniko", "Noto Sans Georgian", system-ui, sans-serif !important;
+}
+
+.music-toggle__thumb {
+  font-family: system-ui, sans-serif !important;
+}
